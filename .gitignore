@@ -6,3 +6,5 @@
 /.nova
 /.vscode
 /.zed
+/coverage
+/coverage-final.json
