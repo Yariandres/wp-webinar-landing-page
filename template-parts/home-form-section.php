@@ -1,55 +1,69 @@
 <?php
-  $headline = get_field('form_headline');
-  $description = get_field('form_description');
-  $form_date = get_field('form_date');
-  $time = get_field('form_time');
-  $location = get_field('form_location');
-  $admission = get_field('form_admission');
-  $button_text = get_field('form_button_text');
-  $quote = get_field('form_quote');
-  $quote_author = get_field('form_quote_author');
-  $note = get_field('form_note');
-?>
+$headline = get_field('form_headline');
+$description = get_field('form_description');
+// form will be handled by mailerLite
+$date = get_field('form_date');
+$time = get_field('form_time');
+$location = get_field('form_location');
+$admission = get_field('form_admission');
+$quote = get_field('form_quote');
+$quoteAuthor = get_field('form_quote_author');
+$note = get_field('form_note');
 
+
+?>
 <section id="register" class="py-16 bg-gradient-to-br from-[#D5B4CF] to-[#E4C8D6]">
     <div class="container mx-auto px-4 max-w-4xl">
       <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12">
         <div class="text-center mb-8">
-          <h2 class="font-serif text-3xl md:text-4xl text-[#2D1E2F] mb-4"><?php echo esc_html($headline) ?></h2>
-          <p class="text-lg text-[#2D1E2F] max-w-2xl mx-auto">
-            <?php echo esc_html($headline) ?></p>
+          <h2 class="font-serif text-3xl md:text-4xl text-[#2D1E2F] mb-4">
+			<?php echo esc_html($headline); ?>
+		</h2>
+			<p class="text-lg text-[#2D1E2F] max-w-2xl mx-auto">
+				<?php echo esc_html($description);?>
+			</p>
         </div>
+        
         <div class="flex flex-col md:flex-row gap-8">
           <div class="md:w-1/2">
             <div class="mb-6">
               <div class="flex items-center mb-4">
                 <i class="fa-solid fa-calendar-check text-[#4D325A] text-xl mr-3"></i>
                 <span class="text-lg text-[#2D1E2F] font-medium">
-                  <?php echo esc_html($form_date); ?>
-                </span>
+					<?php echo esc_html($date);?>
+				</span>
               </div>
               <div class="flex items-center mb-4">
                 <i class="fa-solid fa-clock text-[#4D325A] text-xl mr-3"></i>
                 <span class="text-lg text-[#2D1E2F] font-medium">
-                  <?php echo esc_html($time);?>
-                </span>
+					<?php echo esc_html($time);?>
+				</span>
               </div>
               <div class="flex items-center mb-4">
                 <i class="fa-solid fa-video text-[#4D325A] text-xl mr-3"></i>
-                <span class="text-lg text-[#2D1E2F] font-medium">Live Online Event</span>
+                <span class="text-lg text-[#2D1E2F] font-medium">
+					<?php echo esc_html($location);?>
+				</span>
               </div>
               <div class="flex items-center">
                 <i class="fa-solid fa-gift text-[#4D325A] text-xl mr-3"></i>
-                <span class="text-lg text-[#2D1E2F] font-medium">Free Admission</span>
+                <span class="text-lg text-[#2D1E2F] font-medium">
+					<?php echo esc_html($admission);?>
+				</span>
               </div>
             </div>
             
             <div class="bg-gradient-to-br from-[#FCE8DD] to-[#FDF3E9] p-4 rounded-xl">
-              <p class="text-[#2D1E2F] italic">"The Akashic Records hold the blueprint of your soul's journey. Learning to access them safely can transform your understanding of yourself and your purpose."</p>
-              <p class="text-right text-[#4D325A] font-medium mt-2">— Olga Stępińska</p>
+              <p class="text-[#2D1E2F] italic">"
+				<?php echo esc_html($quote);?>
+			  </p>
+              <p class="text-right text-[#4D325A] font-medium mt-2">
+				<?php echo esc_html($quoteAuthor);?>
+			  </p>
             </div>
           </div>
           
+		  <!-- Form for mailerLite -->
           <div class="md:w-1/2">
             <form id="registration-form" class="space-y-4">
               <div>
@@ -58,7 +72,9 @@
               </div>
               
               <div>
-                <label for="email" class="block text-[#2D1E2F] mb-1">Email Address</label>
+                <label for="email" class="block text-[#2D1E2F] mb-1">
+					<?php echo esc_html($note);?>
+				</label>
                 <input type="email" id="email" class="w-full px-4 py-3 rounded-xl border border-[#E4C8D6] focus:outline-none focus:ring-2 focus:ring-[#4D325A]" placeholder="Your email" required>
               </div>
               
